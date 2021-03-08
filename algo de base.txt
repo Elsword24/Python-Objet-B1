@@ -1,0 +1,13 @@
+Afficher la map
+Demander a poser un pion x ou o
+poser le pion entré a la position entré
+
+	if pion x poser :
+			 if pion o a coté de x :
+						si pion x a coté de pion o =! pion x^1:
+			
+				transformer tout les pion o en x
+
+
+
+Print tableau 8*8
