@@ -16,4 +16,11 @@ def display_checkerboard(x = int , checkerboard = []):
                     print('',end = "") 
                 print(checkerboard[ligne][colone], end = "  ")
         print("")
+
+def checkerboard_list(x = int, y = int ):
+    damier = x  * ['.']
+    for i in range(len(damier)):
+        damier[i] = y * ['.']
+    return damier
+
 display_checkerboard()
