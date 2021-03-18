@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 #####################################################
 #	Le code est écrit en anglais pour l"opensource	#
 #			  Merci de continuer ainsi              #
@@ -191,3 +192,13 @@ def run():
 		print("Nobody wins ! ")
 
 run() # run game
+=======
+def plateau(n):
+    plateau=[]
+    for i in range(0,n):
+        lst=[]
+        for y in range(0,n):
+              lst.append(False)
+        plateau.append(lst)
+    return plateau
+>>>>>>> Stashed changes
