@@ -17,14 +17,24 @@ def plateau_affichage (L,H) : #def de la fonction affichage plateau
             else :
                 print ('.', end='  ') 
 
-
+def pose(x):
+    #while plateaunotfull == True : #les joueurs jouent tant que le plateau n'est pas plein
+        if x==1 :
+            print ('Jouer un pion X')
+            
+            x=x-1
+        else :
+            print ('Jouer un pion O')
+            x=x+1
 
 def jeu () : #création d'une variable pour lancer le jeu
     L=int(input('Tailleduplateau')) +1  # création d'unevaraible longueur et hauteur pour le plateau
     H=L 
+    x=1 #création variable joueur
     if L-1<=5 :
         print ('Le plateau est trop petit')
     else:
         plateau_affichage(L,H)
+    pose(x)
 
 jeu()
