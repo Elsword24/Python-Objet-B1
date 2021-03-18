@@ -24,4 +24,3 @@ def checkerboard_list(x = int, y = int ):
     return damier
 
 display_checkerboard()
-
