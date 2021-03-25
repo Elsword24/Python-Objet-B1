@@ -130,27 +130,29 @@ def finjeu (tableauPions) :
     pionsX=[] #création de deux liste pour stocker les pions
     pionsO=[]
     for p in tableauPions : #défilement des cases du plateau pour vérifier si il est plein ou pas
-        l=[0]
-        c=[1]
+        l=p[0]
+        c=p[1]
         if tableauPions[l][c] =="." :
             break
         else :
             print ("Fin de jeu") 
             for p in tableauPions : #vérification de chaque cases pour compter les pions
-                l=[0]
-                c=[0]
-                if tableauPions[l][c] = 'X':
+                l=p[0]
+                c=p[0]
+                if tableauPions[l][c] == 'X':
                     pionsX.append([l,c])
-                elif tableauPions[l][c] = 'O':
+                elif tableauPions[l][c] == 'O':
                     pionsO.append[l][c]
                 else :
                     break
 
         
+def jeu ():
+    taille = 8
+    tableauPions = creerGrille(taille) #création et stockage de la liste
+    placerPionsCentraux(tableauPions)
+    afficherGrille(tableauPions)
+    pose (1,tableauPions)
+    finjeu(tableauPions)
 
-taille = 8
-tableauPions = creerGrille(taille) #création et stockage de la liste
-placerPionsCentraux(tableauPions)
-afficherGrille(tableauPions)
-
-pose (1,tableauPions)
+jeu()
