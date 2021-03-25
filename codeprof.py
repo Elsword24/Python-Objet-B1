@@ -76,7 +76,6 @@ def retournement (tableauPions,lig,col,n,y) : #fonction retournement
 
 def verification (tableauPions,lig,col) :
     resultat= [] #création d'une liste contenant les directions a retourner
-    print ("Je suis dans la fonction vérif")
     x=1
     if x==1 :
         symbol='X' 
@@ -85,11 +84,7 @@ def verification (tableauPions,lig,col) :
         symbol='O'
         symbol2='X'
     tableauPions[lig][col]
-    print (tableauPions[lig][col] , 'acteullement la case du pointeur')
-    print (tableauPions[lig-1][col], 'Je vérifie avec lig-1')
-    print (tableauPions[5][5])
     if tableauPions[lig-1][col] ==symbol2 : #au dessus
-        print ('check de au dessus')
         n=1
         y=0
         resultat.append([n,y])
@@ -126,33 +121,31 @@ def verification (tableauPions,lig,col) :
         y=p[1]
         retournement(tableauPions,lig,col,n,y)
 
-def finjeu (tableauPions) :
+def finjeu (tableauPions,f) :
     pionsX=[] #création de deux liste pour stocker les pions
     pionsO=[]
-    for p in tableauPions : #défilement des cases du plateau pour vérifier si il est plein ou pas
-        l=p[0]
-        c=p[1]
-        if tableauPions[l][c] =="." :
-            break
-        else :
-            print ("Fin de jeu") 
-            for p in tableauPions : #vérification de chaque cases pour compter les pions
-                l=p[0]
-                c=p[0]
-                if tableauPions[l][c] == 'X':
-                    pionsX.append([l,c])
-                elif tableauPions[l][c] == 'O':
-                    pionsO.append[l][c]
-                else :
-                    break
+    for i in range (len(tableauPions)) : #défilement des cases du plateau pour vérifier si il est plein ou pas
+        for j in range(len(tableauPions)) :
+            if tableauPions[i][j] =="." :
+                break
+            if tableauPions[i][j] == 'X':
+                pionsX.append([i,j])
+                return (len(pionsX))
+            elif tableauPions[i][j] == 'O':
+                pionsO.append([i,j])
+                return (len(pionsO))
+            f=0 #f prends la valeur 0, fin du jeu
+            return (f) #fin de la partie activé
 
         
 def jeu ():
+    f=1
     taille = 8
     tableauPions = creerGrille(taille) #création et stockage de la liste
     placerPionsCentraux(tableauPions)
     afficherGrille(tableauPions)
-    pose (1,tableauPions)
-    finjeu(tableauPions)
+    while f==1 : #le jeu se poursuivra tant que f est différents de 0
+        pose (1,tableauPions)
+        finjeu(tableauPions,f)
 
 jeu()
